@@ -7,22 +7,22 @@
 package app
 
 import (
-	"github.com/liuzhaomax/go-maxms/internal/api"
-	"github.com/liuzhaomax/go-maxms/internal/core"
-	"github.com/liuzhaomax/go-maxms/internal/middleware"
-	"github.com/liuzhaomax/go-maxms/internal/middleware/auth"
-	"github.com/liuzhaomax/go-maxms/internal/middleware/reverse_proxy"
-	"github.com/liuzhaomax/go-maxms/internal/middleware/tracing"
-	"github.com/liuzhaomax/go-maxms/internal/middleware/validator"
-	"github.com/liuzhaomax/go-maxms/internal/middleware_rpc"
-	auth2 "github.com/liuzhaomax/go-maxms/internal/middleware_rpc/auth"
-	tracing2 "github.com/liuzhaomax/go-maxms/internal/middleware_rpc/tracing"
-	validator2 "github.com/liuzhaomax/go-maxms/internal/middleware_rpc/validator"
-	"github.com/liuzhaomax/go-maxms/src/api_user/business"
-	"github.com/liuzhaomax/go-maxms/src/api_user/handler"
-	"github.com/liuzhaomax/go-maxms/src/api_user/model"
-	business2 "github.com/liuzhaomax/go-maxms/src/api_user_rpc/business"
-	model2 "github.com/liuzhaomax/go-maxms/src/api_user_rpc/model"
+	"github.com/liuzhaomax/ovo/internal/api"
+	"github.com/liuzhaomax/ovo/internal/core"
+	"github.com/liuzhaomax/ovo/internal/middleware"
+	"github.com/liuzhaomax/ovo/internal/middleware/auth"
+	"github.com/liuzhaomax/ovo/internal/middleware/reverse_proxy"
+	"github.com/liuzhaomax/ovo/internal/middleware/tracing"
+	"github.com/liuzhaomax/ovo/internal/middleware/validator"
+	"github.com/liuzhaomax/ovo/internal/middleware_rpc"
+	auth2 "github.com/liuzhaomax/ovo/internal/middleware_rpc/auth"
+	tracing2 "github.com/liuzhaomax/ovo/internal/middleware_rpc/tracing"
+	validator2 "github.com/liuzhaomax/ovo/internal/middleware_rpc/validator"
+	"github.com/liuzhaomax/ovo/src/api_user/business"
+	"github.com/liuzhaomax/ovo/src/api_user/handler"
+	"github.com/liuzhaomax/ovo/src/api_user/model"
+	business2 "github.com/liuzhaomax/ovo/src/api_user_rpc/business"
+	model2 "github.com/liuzhaomax/ovo/src/api_user_rpc/model"
 )
 
 // Injectors from wire.go:

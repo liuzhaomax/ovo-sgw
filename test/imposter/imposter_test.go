@@ -3,7 +3,7 @@ package imposter
 import (
 	"flag"
 	"fmt"
-	"github.com/liuzhaomax/go-maxms/internal/core"
+	"github.com/liuzhaomax/ovo/internal/core"
 	"github.com/spf13/viper"
 	"log"
 	"testing"
@@ -45,11 +45,13 @@ func getConfig() *core.Config {
 	v.SetConfigFile(*configFile)
 	err := v.ReadInConfig()
 	if err != nil {
-		log.Fatalf("读取配置文件时出错: %v", err)
+		log.Printf("读取配置文件时出错: %v", err)
+		return nil
 	}
 	err = v.Unmarshal(cfg)
 	if err != nil {
-		log.Fatalf("解析配置文件时出错: %v", err)
+		log.Printf("解析配置文件时出错: %v", err)
+		return nil
 	}
 	return cfg
 }

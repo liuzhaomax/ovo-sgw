@@ -1,7 +1,7 @@
 app:
-  name: go-maxms
+  name: ovo
   version: 0.1
-  domain: liuzhaomax.cn
+  domain: ovo.liuzhaomax.cn
   enabled:
     rsa: false # rsa和vault有关联关系
     vault: true
@@ -80,7 +80,7 @@ lib:
 server:
   protocol: http
   host: 172.16.96.98
-  port: 10001
+  port: 9998
   base_url: /
   read_timeout: 5 # seconds
   write_timeout: 10
@@ -88,8 +88,24 @@ server:
   shutdown_timeout: 10
 
 downstreams:
-  - name: go-maxms-be
+  - name: ovo-user
     endpoint:
       host: 172.16.96.98
-      port: 9801
+      port: 9301
+  - name: ovo-file
+    endpoint:
+      host: 172.16.96.98
+      port: 9302
+  - name: ovo-stats
+    endpoint:
+      host: 172.16.96.98
+      port: 9303
+  - name: ovo-kanban
+    endpoint:
+      host: 172.16.96.98
+      port: 9304
+  - name: ovo-doc
+    endpoint:
+      host: 172.16.96.98
+      port: 9305
 

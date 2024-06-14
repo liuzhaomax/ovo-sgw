@@ -3,8 +3,8 @@ package app
 import (
 	"context"
 	"fmt"
-	"github.com/liuzhaomax/go-maxms/internal/api"
-	"github.com/liuzhaomax/go-maxms/internal/core"
+	"github.com/liuzhaomax/ovo/internal/api"
+	"github.com/liuzhaomax/ovo/internal/core"
 	"github.com/sirupsen/logrus"
 	"net"
 	"net/http"
