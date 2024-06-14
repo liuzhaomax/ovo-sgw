@@ -24,7 +24,7 @@ pipeline {
         Host_port = "9999" // 启用随机端口，会被赋值
         JobName = "ovo-sgw/main"
         DeploymentServerIP = "172.16.96.98"
-        StaticFolderName = "ovo-sgw"
+        StaticFolderName = "ovo"
     }
     // 流水线阶段
     stages {

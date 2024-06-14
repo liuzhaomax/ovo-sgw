@@ -1,7 +1,7 @@
 app:
   name: ovo-sgw
   version: 0.1
-  domain: ovo-sgw.liuzhaomax.cn
+  domain: ovo.liuzhaomax.cn
   enabled:
     rsa: false # rsa和vault有关联关系
     vault: true
