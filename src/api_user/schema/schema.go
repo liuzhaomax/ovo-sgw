@@ -1,8 +1,8 @@
 package schema
 
 import (
-	"github.com/liuzhaomax/ovo/internal/core"
-	"github.com/liuzhaomax/ovo/src/api_user/model"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/src/api_user/model"
 )
 
 type UserRes struct {

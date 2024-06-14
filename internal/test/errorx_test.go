@@ -3,7 +3,7 @@ package test
 import (
 	"errors"
 	"fmt"
-	"github.com/liuzhaomax/ovo/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"github.com/magiconair/properties/assert"
 	"testing"
 )

@@ -2,7 +2,7 @@ package test
 
 import (
 	"fmt"
-	"github.com/liuzhaomax/ovo/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"testing"
 )
 

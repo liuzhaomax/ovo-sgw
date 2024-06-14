@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
-	"github.com/liuzhaomax/ovo/internal/app"
-	"github.com/liuzhaomax/ovo/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/internal/app"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
 )
 
 func main() {

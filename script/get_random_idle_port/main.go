@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/liuzhaomax/ovo/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"github.com/spf13/viper"
 	"log"
 	"net"

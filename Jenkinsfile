@@ -19,12 +19,12 @@ pipeline {
         harborUsername = "admin"
         harborPassword = "Harbor12345"
         harborAddress = "172.16.96.97:9002"
-        harborRepo = "ovo"
+        harborRepo = "ovo-sgw"
         Container_port = "9999" // 启用随机端口，会被赋值
         Host_port = "9999" // 启用随机端口，会被赋值
-        JobName = "ovo/main"
+        JobName = "ovo-sgw/main"
         DeploymentServerIP = "172.16.96.98"
-        StaticFolderName = "ovo"
+        StaticFolderName = "ovo-sgw"
     }
     // 流水线阶段
     stages {
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo "--------------------- Checkout Start ---------------------"
                 timeout(time: 3, unit: "MINUTES"){
-                    checkout([$class: "GitSCM", branches: [[name: "**"]], extensions: [], userRemoteConfigs: [[url: "https://github.com/liuzhaomax/ovo.git"]]])
+                    checkout([$class: "GitSCM", branches: [[name: "**"]], extensions: [], userRemoteConfigs: [[url: "https://github.com/liuzhaomax/ovo-sgw.git"]]])
                 }
                 echo "--------------------- Checkout End ---------------------"
             }

@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/google/wire"
-	"github.com/liuzhaomax/ovo/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"github.com/opentracing/opentracing-go"
 	"github.com/uber/jaeger-client-go"
 	jConfig "github.com/uber/jaeger-client-go/config"

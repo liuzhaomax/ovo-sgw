@@ -3,8 +3,8 @@ package app
 import (
 	"context"
 	"fmt"
-	"github.com/liuzhaomax/ovo/internal/api"
-	"github.com/liuzhaomax/ovo/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/internal/api"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"github.com/sirupsen/logrus"
 	"net"
 	"net/http"

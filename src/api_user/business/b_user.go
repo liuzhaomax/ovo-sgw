@@ -4,9 +4,9 @@ import (
 	"context"
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
-	"github.com/liuzhaomax/ovo/internal/core"
-	"github.com/liuzhaomax/ovo/src/api_user/model"
-	"github.com/liuzhaomax/ovo/src/api_user/schema"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/src/api_user/model"
+	"github.com/liuzhaomax/ovo-sgw/src/api_user/schema"
 	"github.com/redis/go-redis/v9"
 	"time"
 )

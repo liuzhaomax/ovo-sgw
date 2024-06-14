@@ -2,7 +2,7 @@ package cors
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/liuzhaomax/ovo/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"net/http"
 )
 

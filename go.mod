@@ -1,4 +1,4 @@
-module github.com/liuzhaomax/ovo
+module github.com/liuzhaomax/ovo-sgw
 
 go 1.21.4
 

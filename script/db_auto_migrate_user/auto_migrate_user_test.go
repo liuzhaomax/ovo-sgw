@@ -1,7 +1,7 @@
 package db_auto_migrate_user
 
 import (
-	"github.com/liuzhaomax/ovo/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"testing"
 )
 

@@ -3,10 +3,10 @@ package middleware
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/google/wire"
-	"github.com/liuzhaomax/ovo/internal/middleware/auth"
-	"github.com/liuzhaomax/ovo/internal/middleware/reverse_proxy"
-	"github.com/liuzhaomax/ovo/internal/middleware/tracing"
-	"github.com/liuzhaomax/ovo/internal/middleware/validator"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware/auth"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware/reverse_proxy"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware/tracing"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware/validator"
 )
 
 var MiddlewareSet = wire.NewSet(wire.Struct(new(Middleware), "*"))

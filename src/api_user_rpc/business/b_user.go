@@ -3,10 +3,10 @@ package business
 import (
 	"context"
 	"github.com/google/wire"
-	"github.com/liuzhaomax/ovo/internal/core"
-	"github.com/liuzhaomax/ovo/src/api_user_rpc/model"
-	"github.com/liuzhaomax/ovo/src/api_user_rpc/pb"
-	"github.com/liuzhaomax/ovo/src/api_user_rpc/schema"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/src/api_user_rpc/model"
+	"github.com/liuzhaomax/ovo-sgw/src/api_user_rpc/pb"
+	"github.com/liuzhaomax/ovo-sgw/src/api_user_rpc/schema"
 	"github.com/redis/go-redis/v9"
 )
 

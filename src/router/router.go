@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/liuzhaomax/ovo/internal/middleware"
-	"github.com/liuzhaomax/ovo/src/api_user/handler"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware"
+	"github.com/liuzhaomax/ovo-sgw/src/api_user/handler"
 )
 
 func Register(root *gin.RouterGroup, handler *handler.HandlerUser, mw *middleware.Middleware) {

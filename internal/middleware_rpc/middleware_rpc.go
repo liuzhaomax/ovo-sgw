@@ -3,9 +3,9 @@ package middleware_rpc
 import (
 	"context"
 	"github.com/google/wire"
-	"github.com/liuzhaomax/ovo/internal/middleware_rpc/auth"
-	"github.com/liuzhaomax/ovo/internal/middleware_rpc/tracing"
-	"github.com/liuzhaomax/ovo/internal/middleware_rpc/validator"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware_rpc/auth"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware_rpc/tracing"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware_rpc/validator"
 	"google.golang.org/grpc"
 )
 

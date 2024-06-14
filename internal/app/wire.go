@@ -5,11 +5,11 @@ package app
 
 import (
 	"github.com/google/wire"
-	"github.com/liuzhaomax/ovo/internal/api"
-	"github.com/liuzhaomax/ovo/internal/core"
-	"github.com/liuzhaomax/ovo/internal/middleware"
-	"github.com/liuzhaomax/ovo/internal/middleware_rpc"
-	"github.com/liuzhaomax/ovo/src/set"
+	"github.com/liuzhaomax/ovo-sgw/internal/api"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware"
+	"github.com/liuzhaomax/ovo-sgw/internal/middleware_rpc"
+	"github.com/liuzhaomax/ovo-sgw/src/set"
 )
 
 func InitInjector() (*Injector, func(), error) {

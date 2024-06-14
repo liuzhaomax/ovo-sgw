@@ -1,9 +1,9 @@
 package schema
 
 import (
-	"github.com/liuzhaomax/ovo/internal/core"
-	"github.com/liuzhaomax/ovo/src/api_user_rpc/model"
-	"github.com/liuzhaomax/ovo/src/api_user_rpc/pb"
+	"github.com/liuzhaomax/ovo-sgw/internal/core"
+	"github.com/liuzhaomax/ovo-sgw/src/api_user_rpc/model"
+	"github.com/liuzhaomax/ovo-sgw/src/api_user_rpc/pb"
 )
 
 func MapUser2UserRes(user *model.User) *pb.UserRes {
