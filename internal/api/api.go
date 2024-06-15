@@ -6,7 +6,6 @@ import (
 	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"github.com/liuzhaomax/ovo-sgw/internal/middleware"
 	"github.com/liuzhaomax/ovo-sgw/internal/middleware/cors"
-	"github.com/liuzhaomax/ovo-sgw/src/api_user/handler"
 	"github.com/liuzhaomax/ovo-sgw/src/router"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -21,7 +20,6 @@ type API interface {
 
 type Handler struct {
 	Middleware         *middleware.Middleware
-	HandlerUser        *handler.HandlerUser
 	PrometheusRegistry *prometheus.Registry
 }
 
@@ -45,7 +43,7 @@ func (h *Handler) Register(app *gin.Engine) {
 		root.Use(h.Middleware.Validator.ValidateHeaders())
 		root.Use(h.Middleware.Auth.ValidateSignature())
 		// dynamic api
-		router.Register(root, h.HandlerUser, h.Middleware)
+		router.Register(root, h.Middleware)
 	}
 }
 

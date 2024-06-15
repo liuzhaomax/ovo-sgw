@@ -4,8 +4,6 @@ import (
 	"github.com/google/wire"
 	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"github.com/liuzhaomax/ovo-sgw/internal/middleware_rpc"
-	"github.com/liuzhaomax/ovo-sgw/src/api_user_rpc/business"
-	"github.com/liuzhaomax/ovo-sgw/src/api_user_rpc/pb"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"google.golang.org/grpc"
@@ -23,7 +21,6 @@ type APIRPC interface {
 type HandlerRPC struct {
 	PrometheusRegistry *prometheus.Registry
 	MiddlewareRPC      *middleware_rpc.MiddlewareRPC
-	BusinessRPC        *business.BusinessUser
 }
 
 func (h *HandlerRPC) Register() *grpc.Server {
@@ -42,8 +39,6 @@ func (h *HandlerRPC) Register() *grpc.Server {
 	serverOpts = append(serverOpts, grpc.UnaryInterceptor(middleware_rpc.ChainUnaryInterceptors(interceptorMap)))
 	// 创建gRPC服务
 	server := grpc.NewServer(serverOpts...)
-	// 注册接口
-	pb.RegisterUserServiceServer(server, h.BusinessRPC)
 
 	// 健康检查
 	healthCheck := health.NewServer()

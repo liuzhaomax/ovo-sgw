@@ -9,7 +9,6 @@ import (
 	"github.com/liuzhaomax/ovo-sgw/internal/core"
 	"github.com/liuzhaomax/ovo-sgw/internal/middleware"
 	"github.com/liuzhaomax/ovo-sgw/internal/middleware_rpc"
-	"github.com/liuzhaomax/ovo-sgw/src/set"
 )
 
 func InitInjector() (*Injector, func(), error) {
@@ -22,13 +21,13 @@ func InitInjector() (*Injector, func(), error) {
 		core.InitPrometheusRegistry,
 		api.APISet,
 		api.APIRPCSet,
-		set.HandlerSet,
-		set.BusinessSet,
-		set.ModelSet,
+		// set.HandlerSet,
+		// set.BusinessSet,
+		// set.ModelSet,
 		core.LoggerSet,
-		core.ResponseSet,
-		core.TransactionSet,
-		core.RocketMQSet,
+		// core.ResponseSet,
+		// core.TransactionSet,
+		// core.RocketMQSet,
 		middleware.MwsSet,
 		middleware.MiddlewareSet,
 		middleware_rpc.MwsRPCSet,

@@ -18,11 +18,6 @@ import (
 	auth2 "github.com/liuzhaomax/ovo-sgw/internal/middleware_rpc/auth"
 	tracing2 "github.com/liuzhaomax/ovo-sgw/internal/middleware_rpc/tracing"
 	validator2 "github.com/liuzhaomax/ovo-sgw/internal/middleware_rpc/validator"
-	"github.com/liuzhaomax/ovo-sgw/src/api_user/business"
-	"github.com/liuzhaomax/ovo-sgw/src/api_user/handler"
-	"github.com/liuzhaomax/ovo-sgw/src/api_user/model"
-	business2 "github.com/liuzhaomax/ovo-sgw/src/api_user_rpc/business"
-	model2 "github.com/liuzhaomax/ovo-sgw/src/api_user_rpc/model"
 )
 
 // Injectors from wire.go:
@@ -60,41 +55,19 @@ func InitInjector() (*Injector, func(), error) {
 		Tracing:      tracingTracing,
 		ReverseProxy: reverseProxy,
 	}
+	registry := core.InitPrometheusRegistry()
+	handler := &api.Handler{
+		Middleware:         middlewareMiddleware,
+		PrometheusRegistry: registry,
+	}
 	db, cleanup2, err := core.InitDB()
 	if err != nil {
 		cleanup()
 		return nil, nil, err
 	}
-	modelUser := &model.ModelUser{
-		DB: db,
-	}
-	trans := &core.Trans{
-		DB: db,
-	}
-	businessUser := &business.BusinessUser{
-		Model: modelUser,
-		Tx:    trans,
-		Redis: client,
-	}
-	response := &core.Response{
-		Logger: coreLogger,
-	}
-	rocketMQ := &core.RocketMQ{}
-	handlerUser := &handler.HandlerUser{
-		Business: businessUser,
-		Logger:   coreLogger,
-		Res:      response,
-		RocketMQ: rocketMQ,
-	}
-	registry := core.InitPrometheusRegistry()
-	apiHandler := &api.Handler{
-		Middleware:         middlewareMiddleware,
-		HandlerUser:        handlerUser,
-		PrometheusRegistry: registry,
-	}
 	injectorHTTP := InjectorHTTP{
 		Engine:  engine,
-		Handler: apiHandler,
+		Handler: handler,
 		DB:      db,
 		Redis:   client,
 	}
@@ -115,20 +88,9 @@ func InitInjector() (*Injector, func(), error) {
 		ValidatorRPC: validatorRPC,
 		TracingRPC:   tracingRPC,
 	}
-	modelModelUser := &model2.ModelUser{
-		DB: db,
-	}
-	businessBusinessUser := &business2.BusinessUser{
-		Model:    modelModelUser,
-		Tx:       trans,
-		Redis:    client,
-		IRes:     response,
-		RocketMQ: rocketMQ,
-	}
 	handlerRPC := &api.HandlerRPC{
 		PrometheusRegistry: registry,
 		MiddlewareRPC:      middlewareRPC,
-		BusinessRPC:        businessBusinessUser,
 	}
 	injectorRPC := InjectorRPC{
 		HandlerRPC: handlerRPC,
